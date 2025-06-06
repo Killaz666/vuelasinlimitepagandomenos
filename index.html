@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vuelos Increíbles | Desde $49.900 COP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeInBody 1s ease-in-out;
+    }
+    @keyframes fadeInBody { from { opacity: 0; } to { opacity: 1; } }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      max-width: 550px;
+      width: 100%;
+      animation: fadeInCard 1.5s ease;
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo { width: 70px; margin-bottom: 1rem; }
+    h1 { font-size: 2.6rem; color: #ffcc00; margin-bottom: 1rem; }
+    p { font-size: 1.1rem; color: #e0e0e0; margin-bottom: 2rem; }
+    ul.destinos { list-style: none; padding: 0; margin-bottom: 2rem; }
+    ul.destinos li { margin: 0.5rem 0; font-size: 1rem; color: #ffffff; }
+    .btn-comprar {
+      background: linear-gradient(90deg, #ffdd00, #ffc400);
+      color: #000;
+      font-weight: 600;
+      padding: 1rem 2.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-comprar:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    footer { margin-top: 2rem; font-size: 0.85rem; color: #ccc; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/3079/3079028.png" alt="Avión" class="logo">
+    <h1>¡Vuela desde $49.900 COP!</h1>
+    <p>Las mejores ofertas en vuelos nacionales. ¡Compra ya antes que se agoten!</p>
+    <ul class="destinos">
+      <li>✈️ Bogotá</li>
+      <li>✈️ Medellín</li>
+      <li>✈️ Cartagena</li>
+      <li>✈️ Cali</li>
+      <li>✈️ Santa Marta</li>
+      <li>✈️ San Andrés</li>
+      <li>✈️ Y muchos más destinos...</li>
+    </ul>
+        <footer>&copy; 2025 Promofly | Todos los derechos reservados.</footer>
+  </div>
+</body>
+</html>
