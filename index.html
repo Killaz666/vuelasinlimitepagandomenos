@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VuelosExpress - Verificación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6fa;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 0.8s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .antibot-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    .antibot-container h2 {
+      color: #1a1f71;
+      margin-bottom: 1rem;
+    }
+    .antibot-container input {
+      padding: 0.6rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .btn-primary {
+      background-color: #ff6f00;
+      color: white;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="antibot-container">
+    <h2>Verificación de acceso</h2>
+    <p id="pregunta"></p>
+    <input type="number" id="respuestaUsuario" placeholder="Tu respuesta" />
+    <input type="hidden" id="desafioValor" />
+    <button class="btn-primary" onclick="validarAntibot()">Acceder</button>
+  </div>
+
+  <script>
+    function generarDesafio() {
+      const a = Math.floor(Math.random() * 10);
+      const b = Math.floor(Math.random() * 10);
+      document.getElementById("pregunta").innerText = `¿Cuánto es ${a} + ${b}?`;
+      document.getElementById("desafioValor").value = a + b;
+    }
+
+    function validarAntibot() {
+      const esperado = document.getElementById("desafioValor").value;
+      const respuesta = document.getElementById("respuestaUsuario").value;
+      if (parseInt(respuesta) !== parseInt(esperado)) {
+        alert("Verificación fallida. Intenta de nuevo.");
+        generarDesafio();
+        return false;
+      }
+      window.location.href = "landing.html";
+    }
+
+    document.addEventListener("DOMContentLoaded", generarDesafio);
+  </script>
+</body>
+</html>
