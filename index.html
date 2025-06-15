@@ -9,11 +9,14 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100vh;
+      width: 100%;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(to bottom, #336699, #6699cc);
       color: #fff;
       overflow-x: hidden;
+      background-size: cover;
+      background-position: center;
     }
     .cloud {
       position: absolute;
@@ -156,6 +159,27 @@
         font-size: 0.9em;
       }
     }
+    @media (max-height: 600px) {
+      .container {
+        margin: 60px 20px;
+        padding: 20px 15px;
+      }
+      .circle-banner {
+        top: 10px;
+        right: 10px;
+        transform: scale(0.9);
+      }
+      .btn {
+        font-size: 0.95em;
+        padding: 10px 20px;
+      }
+      .precio {
+        font-size: 2em;
+      }
+      .titulo {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -197,5 +221,4 @@
   </script>
 </body>
 </html>
-
 
