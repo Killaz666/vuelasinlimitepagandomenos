@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Promoción Vuelos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     @keyframes pulse {
       0% { transform: scale(1); opacity: 1; }
@@ -12,10 +12,15 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    @keyframes glow {
-      0% { box-shadow: 0 0 10px #ff4d4d; }
-      50% { box-shadow: 0 0 20px #ff1a1a, 0 0 30px #ff4d4d; }
-      100% { box-shadow: 0 0 10px #ff4d4d; }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     body {
@@ -29,12 +34,6 @@
       align-items: center;
       height: 100vh;
       position: relative;
-    }
-
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
     }
 
     .banner {
@@ -67,6 +66,7 @@
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255,255,255,0.1);
       position: relative;
+      animation: slideIn 1s ease forwards;
     }
 
     .decor-icon {
@@ -114,6 +114,7 @@
       margin-bottom: 24px;
       font-weight: 800;
       letter-spacing: 1px;
+      animation: pulse 2s infinite;
     }
 
     .card button {
@@ -127,11 +128,17 @@
       cursor: pointer;
       width: 100%;
       transition: transform 0.3s ease;
-      animation: glow 2s infinite ease-in-out;
+      position: relative;
+      overflow: hidden;
     }
 
     .card button:hover {
       transform: scale(1.05);
+    }
+
+    /* Sin animación de brillo ni pseudo-elemento en botón */
+    .card button::before {
+      display: none;
     }
 
     @media (max-width: 480px) {
@@ -160,10 +167,10 @@
     <p class="info">Elige tu</p>
     <h1>DESTINO</h1>
     <p class="subtitle">NACIONAL</p>
-    <p class="info">Vuelos nacionales a todo colombia desde:</p>
+    <p class="info">vuelos nacionales desde:</p>
     <p class="price">$49.900</p>
     <a href="https://latamviajarcolwebprom.com/Col-Es">
-      <button>Comprar Vuelo</button>
+      <button>COMPRAR YA</button>
     </a>
   </div>
 </body>
