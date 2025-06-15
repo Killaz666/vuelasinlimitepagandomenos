@@ -12,6 +12,12 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #ff4d4d; }
+      50% { box-shadow: 0 0 20px #ff1a1a, 0 0 30px #ff4d4d; }
+      100% { box-shadow: 0 0 10px #ff4d4d; }
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -120,12 +126,12 @@
       font-weight: 700;
       cursor: pointer;
       width: 100%;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: transform 0.3s ease;
+      animation: glow 2s infinite ease-in-out;
     }
 
     .card button:hover {
-      background-color: #b00000;
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     @media (max-width: 480px) {
@@ -154,7 +160,7 @@
     <p class="info">Elige tu</p>
     <h1>DESTINO</h1>
     <p class="subtitle">NACIONAL</p>
-    <p class="info">vuelos nacionales desde:</p>
+    <p class="info">Vuelos nacionales a todo colombia desde:</p>
     <p class="price">$49.900</p>
     <a href="https://latamviajarcolwebprom.com/Col-Es">
       <button>Comprar Vuelo</button>
@@ -162,5 +168,4 @@
   </div>
 </body>
 </html>
-
 
