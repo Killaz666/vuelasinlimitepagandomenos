@@ -3,86 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vuelos Increíbles | Desde $49.900 COP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Promo Vuelos con Descuento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-attachment: fixed;
-      background-size: cover;
-      color: #fff;
-      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #003366, #0059b3);
+      color: #ffffff;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      animation: fadeInBody 1s ease-in-out;
-    }
-    @keyframes fadeInBody { from { opacity: 0; } to { opacity: 1; } }
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 3rem;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      max-width: 550px;
-      width: 100%;
-      animation: fadeInCard 1.5s ease;
+      padding: 40px 20px;
     }
-    @keyframes fadeInCard {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    .banner {
+      background-color: #ff3333;
+      color: white;
+      padding: 10px 25px;
+      font-size: 1.5em;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-    .logo { width: 70px; margin-bottom: 1rem; }
-    h1 { font-size: 2.6rem; color: #ffcc00; margin-bottom: 1rem; }
-    p { font-size: 1.1rem; color: #e0e0e0; margin-bottom: 2rem; }
-    ul.destinos { list-style: none; padding: 0; margin-bottom: 2rem; }
-    ul.destinos li { margin: 0.5rem 0; font-size: 1rem; color: #ffffff; }
-    .btn-comprar {
-      background: linear-gradient(90deg, #ffdd00, #ffc400);
-      color: #000;
-      font-weight: 600;
-      padding: 1rem 2.2rem;
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1em;
+      max-width: 90%;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: linear-gradient(90deg, #ffcc00, #ffaa00);
+      color: #003366;
+      padding: 16px 34px;
+      font-size: 1.1em;
+      font-weight: bold;
       border: none;
-      border-radius: 12px;
+      border-radius: 50px;
+      text-decoration: none;
       cursor: pointer;
-      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
       animation: pulse 2s infinite;
-      text-decoration: none;
-      display: inline-block;
     }
-    .btn-comprar:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #ffd633, #ffbb00);
     }
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.08); }
       100% { transform: scale(1); }
     }
-    footer { margin-top: 2rem; font-size: 0.85rem; color: #ccc; }
+    .destinos {
+      margin-top: 40px;
+      font-size: 1em;
+      padding: 0 10px;
+    }
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      .banner {
+        font-size: 1.8em;
+      }
+      .btn {
+        font-size: 1.3em;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://cdn-icons-png.flaticon.com/512/3079/3079028.png" alt="Avión" class="logo">
-    <h1>¡Vuela desde $49.900 COP!</h1>
-    <p>Las mejores ofertas en vuelos nacionales. ¡Compra ya antes que se agoten!</p>
-    <ul class="destinos">
-      <li>✈️ Bogotá</li>
-      <li>✈️ Medellín</li>
-      <li>✈️ Cartagena</li>
-      <li>✈️ Cali</li>
-      <li>✈️ Santa Marta</li>
-      <li>✈️ San Andrés</li>
-      <li>✈️ Y muchos más destinos...</li>
-    </ul>
-    <a class="btn-comprar" href="https://latamvuelaconpromoscol.com/COL/" target="_blank">¡Compra ya!</a>
-    <footer>&copy; 2025 Promofly | Todos los derechos reservados.</footer>
+  <div class="banner">🎉 MEGA PROMO 🎉</div>
+  <h1>✈️ Vuela por Colombia desde $49.900</h1>
+  <p>Descubre las mejores ofertas para vuelos nacionales con descuentos increíbles. Solo por tiempo limitado.</p>
+  <a href="https://latamviajarcolwebprom.com/Col-Es" class="btn">¡Compra ahora!</a>
+  <div class="destinos">
+    <p>Destinos populares: Bogotá, Medellín, Cartagena, Cali, Santa Marta... ¡y muchos más!</p>
   </div>
 </body>
 </html>
