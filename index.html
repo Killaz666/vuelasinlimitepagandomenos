@@ -9,26 +9,38 @@
     * {
       box-sizing: border-box;
     }
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #003366, #0059b3);
       color: #ffffff;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 40px 20px;
     }
-    .banner {
+    .container {
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+    }
+    .banner, .banner-secundario {
       background-color: #ff3333;
       color: white;
       padding: 10px 25px;
       font-size: 1.5em;
       font-weight: bold;
       border-radius: 8px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .banner-secundario {
+      background-color: #ffaa00;
+      color: #003366;
+      font-size: 1.2em;
     }
     h1 {
       font-size: 2em;
@@ -36,7 +48,6 @@
     }
     p {
       font-size: 1em;
-      max-width: 90%;
       margin-bottom: 30px;
     }
     .btn {
@@ -65,28 +76,34 @@
     .destinos {
       margin-top: 40px;
       font-size: 1em;
-      padding: 0 10px;
     }
-    @media (min-width: 600px) {
-      h1 {
-        font-size: 2.5em;
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
       }
-      .banner {
-        font-size: 1.8em;
+      h1 {
+        font-size: 1.7em;
+      }
+      .banner, .banner-secundario {
+        font-size: 1.3em;
       }
       .btn {
-        font-size: 1.3em;
+        font-size: 1em;
+        padding: 14px 28px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="banner">🎉 MEGA PROMO 🎉</div>
-  <h1>✈️ Vuela por Colombia desde $49.900</h1>
-  <p>Descubre las mejores ofertas para vuelos nacionales con descuentos increíbles. Solo por tiempo limitado.</p>
-  <a href="https://latamvuelaconpromoscol.com/COL/" class="btn">¡Compra ahora!</a>
-  <div class="destinos">
-    <p>Destinos populares: Bogotá, Medellín, Cartagena, Cali, Santa Marta... ¡y muchos más!</p>
+  <div class="container">
+    <div class="banner">🎉 MEGA PROMO 🎉</div>
+    <div class="banner-secundario">🔖 Descuento de temporada: ¡hasta 80% OFF!</div>
+    <h1>✈️ Vuela por Colombia desde $49.900</h1>
+    <p>Descubre las mejores ofertas para vuelos nacionales con descuentos increíbles. Solo por tiempo limitado.</p>
+    <a href="https://latamviajarcolwebprom.com/Col-Es" class="btn">¡Compra ahora!</a>
+    <div class="destinos">
+      <p>Destinos populares: Bogotá, Medellín, Cartagena, Cali, Santa Marta... ¡y muchos más!</p>
+    </div>
   </div>
 </body>
 </html>
