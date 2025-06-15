@@ -15,12 +15,20 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #365f85;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     .banner {
@@ -42,20 +50,39 @@
     }
 
     .card {
-      background-color: #003d80;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 28px;
+      background: radial-gradient(circle at top left, #004080, #001f3f);
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 32px;
       width: 90%;
       max-width: 400px;
       text-align: center;
       color: white;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+
+    .decor-icon {
+      position: absolute;
+      font-size: 1.8rem;
+      opacity: 0.4;
+    }
+
+    .decor-icon.icon1 {
+      top: -10px;
+      left: -10px;
+    }
+
+    .decor-icon.icon2 {
+      bottom: -10px;
+      right: -10px;
     }
 
     .card h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-transform: uppercase;
     }
 
@@ -65,38 +92,40 @@
     }
 
     .card .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .card .info {
-      font-size: 1rem;
-      margin-bottom: 8px;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
     }
 
     .price {
-      font-size: 3rem;
-      color: white;
-      margin-bottom: 20px;
+      font-size: 3.2rem;
+      color: #ffffff;
+      margin-bottom: 24px;
       font-weight: 800;
+      letter-spacing: 1px;
     }
 
     .card button {
       background-color: #d60000;
       color: white;
       border: none;
-      padding: 16px 22px;
-      border-radius: 10px;
-      font-size: 1.05rem;
-      font-weight: 600;
+      padding: 18px 24px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
       cursor: pointer;
       width: 100%;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .card button:hover {
       background-color: #b00000;
+      transform: scale(1.03);
     }
 
     @media (max-width: 480px) {
@@ -120,6 +149,8 @@
     🎉 MEGA ANIVERSARIO 🎉
   </div>
   <div class="card">
+    <div class="decor-icon icon1">✨</div>
+    <div class="decor-icon icon2">🌟</div>
     <p class="info">Elige tu</p>
     <h1>DESTINO</h1>
     <p class="subtitle">NACIONAL</p>
@@ -131,4 +162,5 @@
   </div>
 </body>
 </html>
+
 
