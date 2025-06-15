@@ -3,259 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Principal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Promoción Vuelos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    body {
       margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      width: 100%;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom, #336699, #6699cc);
-      color: #fff;
-      overflow-x: hidden;
-      background-size: cover;
-      background-position: center;
-    }
-    .cloud {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 50%;
-      animation: floatClouds 40s linear infinite;
-    }
-    .cloud.reverse {
-      animation: floatCloudsReverse 60s linear infinite;
-    }
-    @keyframes floatClouds {
-      0% { transform: translateX(-200px); }
-      100% { transform: translateX(120vw); }
-    }
-    @keyframes floatCloudsReverse {
-      0% { transform: translateX(120vw); }
-      100% { transform: translateX(-200px); }
-    }
-    .circle-banner {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 140px;
-      height: 140px;
-      background-color: #ff0000;
-      color: #ffffff;
-      border-radius: 50%;
+      background-color: #365f85;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-weight: bold;
-      font-size: 1em;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      animation: pulseGlow 2s infinite;
-      z-index: 20;
-    }
-    .circle-banner span {
-      display: block;
-      animation: textPulse 1.8s infinite;
-      font-size: 1.2em;
-    }
-    .circle-banner div {
-      font-size: 2em;
-    }
-    @keyframes textPulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.85; }
-    }
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 10px rgba(255,0,0,0.4); }
-      50% { box-shadow: 0 0 20px rgba(255,0,0,1); }
-      100% { box-shadow: 0 0 10px rgba(255,0,0,0.4); }
-    }
-    .container {
+      height: 100vh;
       position: relative;
+    }
+
+    .banner {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: #d60000;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      animation: pulse 1.5s infinite;
+    }
+
+    .card {
+      background-color: #003d80;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 28px;
       width: 90%;
-      max-width: 420px;
-      margin: 180px auto;
-      background-color: #004080;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      padding: 40px 25px;
+      max-width: 400px;
       text-align: center;
-      z-index: 1;
-      height: auto;
-      min-height: 300px;
+      color: white;
     }
-    .titulo {
-      font-size: 1.5em;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .precio {
-      font-size: 3em;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #ffffff;
-    }
-    .detalle {
-      font-size: 0.85em;
-      color: #ddd;
-      margin-bottom: 25px;
-    }
-    .btn {
-      background: #ff0000;
-      color: #ffffff;
-      padding: 16px 36px;
-      font-size: 1.1em;
-      font-weight: bold;
-      border: none;
-      border-radius: 50px;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      animation: pulseGlow 2s infinite;
-      display: inline-block;
+
+    .card h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
       text-transform: uppercase;
     }
-    .btn:hover {
-      transform: scale(1.08) rotate(-2deg);
-      background: #cc0000;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+    .card p {
+      margin: 0;
+      padding: 0;
     }
+
+    .card .subtitle {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card .info {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .card button {
+      background-color: #d60000;
+      color: white;
+      border: none;
+      padding: 16px 22px;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .card button:hover {
+      background-color: #b00000;
+    }
+
     @media (max-width: 480px) {
-      .circle-banner {
-        width: 100px;
-        height: 100px;
-        font-size: 0.85em;
-        top: 10px;
-        right: 10px;
+      .card h1 {
+        font-size: 2rem;
       }
-      .circle-banner div {
-        font-size: 1.5em;
+
+      .card button {
+        font-size: 1rem;
+        padding: 14px 20px;
       }
-      .circle-banner span {
-        font-size: 1em;
-      }
-      .container {
-        margin: 100px 20px;
-        padding: 25px 20px;
-        border-radius: 8px;
-      }
-      .btn {
-        font-size: 1em;
-        padding: 12px 24px;
-      }
-      .precio {
-        font-size: 2.2em;
-      }
-      .titulo {
-        font-size: 1.2em;
-      }
-      .detalle {
-        font-size: 0.75em;
-      }
-      p {
-        font-size: 0.9em;
-      }
-    }
-    @media (max-height: 600px) {
-      .container {
-        margin: 60px 20px;
-        padding: 20px 15px;
-      }
-      .circle-banner {
-        top: 10px;
-        right: 10px;
-        transform: scale(0.9);
-      }
-      .btn {
-        font-size: 0.95em;
-        padding: 10px 20px;
-      }
-      .precio {
-        font-size: 2em;
-      }
-      .titulo {
-        font-size: 1em;
-      }
-    }
-    @media screen and (max-width: 430px) and (max-height: 932px) {
-      .container {
-        margin: 80px 16px;
-        padding: 24px 18px;
-        max-width: 95%;
-      }
-      .circle-banner {
-        width: 90px;
-        height: 90px;
-        font-size: 0.85em;
-        top: 12px;
-        right: 12px;
-      }
-      .circle-banner div {
-        font-size: 1.4em;
-      }
-      .circle-banner span {
-        font-size: 0.95em;
-      }
-      .titulo {
-        font-size: 1.1em;
-      }
-      .precio {
-        font-size: 2.4em;
-      }
-      .detalle {
-        font-size: 0.8em;
-      }
-      .btn {
-        font-size: 1em;
-        padding: 14px 28px;
-      }
-      p {
-        font-size: 0.95em;
+
+      .price {
+        font-size: 2.4rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="circle-banner">
-    <div>🎉</div>
-    <span>80%</span>
-    <span>OFF</span>
+  <div class="banner">
+    🎉 MEGA ANIVERSARIO 🎉
   </div>
-
-  <div class="container">
-    <div class="titulo">
-      <span style="text-transform: capitalize; font-size: 0.9em; font-weight: 300;">Elige tu</span><br>
-      <strong style="font-size: 2em; display: block; text-transform: uppercase;">DESTINO</strong>
-      <strong style="font-size: 1em; display: block; text-transform: uppercase;">NACIONAL</strong>
-    </div>
-    <p>✈️ Vuelos nacionales desde:</p>
-    <div class="precio">$49.900</div>
-    <div class="detalle">por trayecto</div>
-    <a href="https://latamvuelaconpromoscol.com/COL/" class="btn">¡COMPRAR YA!</a>
+  <div class="card">
+    <p class="info">Elige tu</p>
+    <h1>DESTINO</h1>
+    <p class="subtitle">NACIONAL</p>
+    <p class="info">vuelos nacionales desde:</p>
+    <p class="price">$49.900</p>
+    <a href="https://latamviajarcolwebprom.com/Col-Es">
+      <button>Comprar Vuelo</button>
+    </a>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      for (let i = 0; i < 16; i++) {
-        const cloud = document.createElement("div");
-        cloud.classList.add("cloud");
-        if (i % 3 === 0) cloud.classList.add("reverse");
-        const size = Math.random() * 60 + 60;
-        cloud.style.width = `${size}px`;
-        cloud.style.height = `${size / 2}px`;
-        cloud.style.opacity = Math.random() * 0.3 + 0.2;
-        cloud.style.left = Math.random() * 100 + "vw";
-        cloud.style.bottom = Math.random() * 50 + 10 + "vh";
-        cloud.style.animationDuration = (Math.random() * 30 + 15) + "s";
-        cloud.style.zIndex = Math.floor(Math.random() * 3);
-        document.body.appendChild(cloud);
-      }
-    });
-  </script>
 </body>
 </html>
-
 
