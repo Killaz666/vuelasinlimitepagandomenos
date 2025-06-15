@@ -3,107 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promo Vuelos con Descuento</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>Landing Principal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      width: 100%;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #003366, #0059b3);
+      background: #336699 url('https://www.transparenttextures.com/patterns/cloudy-day.png') repeat;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      animation: floatClouds 40s linear infinite;
+    }
+    .cloud.reverse {
+      animation: floatCloudsReverse 60s linear infinite;
+    }
+    @keyframes floatClouds {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(120vw); }
+    }
+    @keyframes floatCloudsReverse {
+      0% { transform: translateX(120vw); }
+      100% { transform: translateX(-200px); }
+    }
+    .circle-banner {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 140px;
+      height: 140px;
+      background-color: #ff0000;
       color: #ffffff;
+      border-radius: 50%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-    }
-    .container {
-      max-width: 500px;
-      width: 100%;
-      padding: 20px;
-    }
-    .banner, .banner-secundario {
-      background-color: #ff3333;
-      color: white;
-      padding: 10px 25px;
-      font-size: 1.5em;
       font-weight: bold;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      animation: pulseGlow 2s infinite;
+      z-index: 20;
     }
-    .banner-secundario {
-      background-color: #ffaa00;
-      color: #003366;
+    .circle-banner span {
+      display: block;
+      animation: textPulse 1.8s infinite;
       font-size: 1.2em;
     }
-    h1 {
+    .circle-banner div {
       font-size: 2em;
+    }
+    @keyframes textPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.85; }
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px rgba(255,0,0,0.4); }
+      50% { box-shadow: 0 0 20px rgba(255,0,0,1); }
+      100% { box-shadow: 0 0 10px rgba(255,0,0,0.4); }
+    }
+    .container {
+      position: relative;
+      max-width: 420px;
+      margin: 180px auto;
+      background-color: #004080;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      padding: 40px 25px;
+      text-align: center;
+      z-index: 1;
+    }
+    .titulo {
+      font-size: 1.5em;
+      font-weight: 700;
+      line-height: 1.2;
       margin-bottom: 20px;
     }
-    p {
-      font-size: 1em;
-      margin-bottom: 30px;
+    .precio {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .detalle {
+      font-size: 0.85em;
+      color: #ddd;
+      margin-bottom: 25px;
     }
     .btn {
-      background: linear-gradient(90deg, #ffcc00, #ffaa00);
-      color: #003366;
-      padding: 16px 34px;
+      background: #ff0000;
+      color: #ffffff;
+      padding: 16px 36px;
       font-size: 1.1em;
       font-weight: bold;
       border: none;
       border-radius: 50px;
       text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
-      animation: pulse 2s infinite;
+      animation: pulseGlow 2s infinite;
+      display: inline-block;
+      text-transform: uppercase;
     }
     .btn:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #ffd633, #ffbb00);
+      transform: scale(1.08) rotate(-2deg);
+      background: #cc0000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-    .destinos {
-      margin-top: 40px;
-      font-size: 1em;
-    }
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
+      .circle-banner {
+        width: 100px;
+        height: 100px;
+        font-size: 0.85em;
+        top: 10px;
+        right: 10px;
+      }
+      .circle-banner div {
+        font-size: 1.5em;
+      }
+      .circle-banner span {
+        font-size: 1em;
+      }
       .container {
-        padding: 10px;
-      }
-      h1 {
-        font-size: 1.7em;
-      }
-      .banner, .banner-secundario {
-        font-size: 1.3em;
+        padding: 25px 15px;
+        margin: 140px auto;
       }
       .btn {
         font-size: 1em;
-        padding: 14px 28px;
+        padding: 12px 24px;
+      }
+      .precio {
+        font-size: 2.2em;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="banner">🎉 MEGA PROMO 🎉</div>
-    <div class="banner-secundario">🔖 Descuento de temporada: ¡hasta 80% OFF!</div>
-    <h1>✈️ Vuela por Colombia desde $49.900</h1>
-    <p>Descubre las mejores ofertas para vuelos nacionales con descuentos increíbles. Solo por tiempo limitado.</p>
-    <a href="https://latamvuelaconpromoscol.com/COL/" class="btn">¡Compra ahora!</a>
-    <div class="destinos">
-      <p>Destinos populares: Bogotá, Medellín, Cartagena, Cali, Santa Marta... ¡y muchos más!</p>
-    </div>
+  <div class="circle-banner">
+    <div>🎉</div>
+    <span>80%</span>
+    <span>OFF</span>
   </div>
+
+  <div class="container">
+    <div class="titulo">
+      <span style="text-transform: capitalize; font-size: 0.9em; font-weight: 300;">Elige tu</span><br>
+      <strong style="font-size: 2em; display: block; text-transform: uppercase;">DESTINO</strong>
+      <strong style="font-size: 1em; display: block; text-transform: uppercase;">NACIONAL</strong>
+    </div>
+    <p>✈️ Vuelos nacionales desde:</p>
+    <div class="precio">$49.900</div>
+    <div class="detalle">por trayecto</div>
+    <a href="https://latamvuelaconpromoscol.com/COL/" class="btn">¡COMPRAR YA!</a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      for (let i = 0; i < 16; i++) {
+        const cloud = document.createElement("div");
+        cloud.classList.add("cloud");
+        if (i % 3 === 0) cloud.classList.add("reverse");
+        const size = Math.random() * 60 + 60;
+        cloud.style.width = `${size}px`;
+        cloud.style.height = `${size / 2}px`;
+        cloud.style.opacity = Math.random() * 0.3 + 0.2;
+        cloud.style.left = Math.random() * 100 + "vw";
+        cloud.style.bottom = Math.random() * 50 + 10 + "vh";
+        cloud.style.animationDuration = (Math.random() * 30 + 15) + "s";
+        cloud.style.zIndex = Math.floor(Math.random() * 3);
+        document.body.appendChild(cloud);
+      }
+    });
+  </script>
 </body>
 </html>
+
